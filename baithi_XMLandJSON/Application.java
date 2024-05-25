@@ -40,9 +40,9 @@ public class Application {
 
         List<Student> emailResult = ConnectionDB.searchStudentByEmail(students, emailToSearch);
         if (searchResult.isEmpty()) {
-            System.out.println("No student found with the name: " + emailToSearch);
+            System.out.println("No student found with the email: " + emailToSearch);
         } else {
-            System.out.println("Students found with the name " + emailToSearch + ": ");
+            System.out.println("Students found with the email " + emailToSearch + ": ");
             for (Student student : searchResult) {
                 System.out.println(student);
             }
