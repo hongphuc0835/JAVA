@@ -23,9 +23,8 @@ public class MongoDBExample {
                 System.out.println("4. Xóa tài liệu");
                 System.out.println("5. Truy vấn toàn bộ bản ghi");
                 System.out.println("0. Thoát");
-                System.out.print("Nhập số lựa chọn (0-5): ");
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Xóa newline còn lại
+                scanner.nextLine();
 
                 switch (choice) {
                     case 1:
@@ -39,8 +38,7 @@ public class MongoDBExample {
                         String city = scanner.nextLine();
 
                         Document insertDoc = new Document("name", name)
-                                .append("age", age)
-                                .append("city", city);
+                                .append("age", age);
                         collection.insertOne(insertDoc);
                         System.out.println("Document inserted successfully");
                         break;
@@ -64,7 +62,7 @@ public class MongoDBExample {
                         String updateName = scanner.nextLine();
                         System.out.print("Nhập tuổi mới: ");
                         int newAge = scanner.nextInt();
-                        scanner.nextLine(); // Xóa newline còn lại
+                        scanner.nextLine();
 
                         Document updateQueryDoc = new Document("name", updateName);
                         Document updateFieldsDoc = new Document("age", newAge);
